@@ -16,11 +16,8 @@ public class Store {
   private static ArrayList<Store> storeList = new ArrayList();
 
   public Store(String name){
-    // Initialize name to parameter and earnings to zero
     double earnings = 0;
-    // Initialize itemList as a new ArrayList
     ArrayList itemList = new ArrayList();
-    // add 'this' store to storeList
     storeList.add(this);
   }
 
@@ -35,11 +32,15 @@ public class Store {
   }
   public void sellItem(int index){
     // check if index is within the size of the itemList (if not, print statement that there are only x items in the store)
-    for(Item e: itemList) {
+    for(Item i: itemList) {
         if(index <= itemList.size()){
             System.out.printf("There are only %d items in the store.", itemList.size());
         }
+        double earnings = 0;
+        earnings = earnings + i.get(index);
+        System.out.printf("Sale: ", earnings);
     }
+    
     // get Item at index from itemList and add its cost to earnings
     // print statement indicating the sale
   }
@@ -55,6 +56,9 @@ public class Store {
     if(!found) {
        System.out.println("Sorry. No such item in the store exists.");
     }   
+    double earnings = 0;
+    earnings = earnings + i.get(index);
+    System.out.printf("Sale: ", earnings);
    }
     // get Item from itemList and add its cost to earnings
     // print statement indicating the sale
@@ -72,6 +76,9 @@ public class Store {
     if(!found) {
         System.out.println("Sorry. The store does not sell this item");
     }
+    double earnings = 0;
+    earnings = earnings + i.get(index);
+    System.out.printf("Sale: ", earnings);
     }
     // get Item i from itemList and add its cost to earnings
    // print statement indicating the sale
@@ -104,8 +111,7 @@ public class Store {
   public static void printStats(){
     // loop over storeList and print the name and the earnings'Store.java'
     for(Store i: storeList) {
-        System.out.printf("")
+        System.out.printf("The store: , had the total earnings: ")
     }
   }
 }
-
